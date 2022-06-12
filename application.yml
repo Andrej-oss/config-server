@@ -10,3 +10,19 @@ spring:
   zipkin:
     enabled: true
     base-url: http://localhost:9411
+management:
+  endpoint.gateway.enabled: true
+  endpoints:
+    web:
+      base-path: /actuator
+      cors:
+        allowed-origins: true
+      exposure:
+        include: "*"
+    jmx:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+      enabled: true
